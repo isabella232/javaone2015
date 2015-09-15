@@ -2,8 +2,8 @@
 
 Presentations and resources related to Apache Maven and Takari:
 
-* Intro and slides
-* Examples 
+* http://takari.github.io/javaone2015/[Intro and slides]
+* https://github.com/takari/javaone2015/tree/master/examples[Examples] 
 
 Documentation for writing or using the presentations can be found at 
 https://code.google.com/p/asciidoc-slidy2-backend-plugin/.
