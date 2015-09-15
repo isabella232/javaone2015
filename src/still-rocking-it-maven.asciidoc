@@ -1,0 +1,47 @@
+=  Still Rocking It: A Dozen Demos and Great News for Apache Maven Users
+:title: Still Rocking It: A Dozen Demos and Great News for Apache Maven Users
+:Author:  Jason van Zyl and  Manfred Moser 
+:Date: October 2015
+:max-width: 45em
+:icons:
+:copyright: Copyright 2015-present, Takari and similgility, All Rights Reserved.
+:incremental:
+
+== Apache Maven - Still Rocking It
+:incremental!:
+
+[quote]
+A Dozen Demos and Great News for Apache Maven Users
+
+Jason van Zyl
+
+* Apache Maven Founder
+* http://twitter.com/jvanzyl[#jvanzyl] 
+* http://www.takari.io[www.takari.io]
+
+Manfred Moser
+
+* Apache Maven Committer and Trainer 
+* http://twitter.com/simpligility[#simpligility]
+* http://www.simpligility.com[www.simpligility.com]
+
+TIP: Hold on tight, this is going to be a wild ride!
+
+== Summary
+:incremental!:
+
+tbd
+
+== The End 
+:incremental!:
+
+Questions, Remarks &  Discussion
+
+TIP: Slides and examples at http://github.com/takari/javaone2015
+
+== Resources
+:incremental!:
+
+* one 
+
+* two
