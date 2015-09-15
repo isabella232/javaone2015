@@ -1,5 +1,5 @@
 =  Still Rocking It: A Dozen Demos and Great News for Apache Maven Users
-:title: Still Rocking It: A Dozen Demos and Great News for Apache Maven Users
+:title: Still Rocking It: A Dozen or More Demos and Great News for Apache Maven Users
 :Author:  Jason van Zyl and  Manfred Moser 
 :Date: October 2015
 :max-width: 45em
@@ -26,6 +26,137 @@ Manfred Moser
 * http://www.simpligility.com[www.simpligility.com]
 
 TIP: Hold on tight, this is going to be a wild ride!
+
+== Before We Get Started 
+
+* Maven is opinionated!
+
+* And so are we!
+ 
+== Before We Get Started - Once More 
+
+Best Practice - Do NOT use old, unsupported stuff!
+
+* Maven 1 (doh!)
+* Maven 2
+* Therefore also not Maven Ant Tasks! 
+* Maven 3.0.x (yes, not that one either)
+* Maven 3.1.x. and Maven 3.2.x
+* Old M2e and Eclipse versions
+* IntelliJ, Netbeans, ... lots talk about that later
+
+TIP: Unless of course you are prepared to maintain those projects yourself....
+
+== Now Lets Get Started - Maven Wrapper
+
+wrapper
+
+== .mvn Configuration
+
+tbd
+
+== Core Extensions
+
+tbd
+
+
+== Control Your Tools
+
+Above controls Maven and config
+
+Next step - control plugin versions - use organization pom like progressive-organization-pom 
+ 
+Use Enforcer plugin
+
+== Extensions Examples
+
+* Concurrent repo access
+* Smart builder
+
+
+
+== Example Polyglot Maven
+
+links and more
+
+jruby - build example 
+
+snakeyaml
+
+presto
+
+
+== Maven Shell
+
+tbd
+
+== Takari Lifecycle
+
+tbd
+
+incremental build library
+
+== Incremental Example
+
+Example of to make incremental plugin (antlr build)
+
+== Maven dev tools
+
+Awesome for Maven dev and plugin dev
+
+== Maven Testing Tools and Beyond
+
+test project generator from dot files
+
+proto plugin - archetype replacement - maybe
+
+== Plugin Testing
+
+plugin testing framework including IDE support
+
+== Plugin Testing Examples
+
+Android Maven Plugin and NDK Plugin
+
+== Generations
+
+maybe .. depending on status, at least update what is there and what is coming
+
+== Other Cool Stuff
+
+Docker Maven Plugin from spotify
+
+
+== Best Practice - Repo Manager
+
+* Use a Maven repo manager
+
+* That is open source ;-) 
+
+== Otto
+
+* New pure-play open source repository manager
+
+* Build by Maven users
+
+* For Maven users
+
+* No thrills
+
+== Related tool
+
+* maven repository tools
+
+== Eclipse and M2e
+
+* including polyglot extensions from Fred
+* Maven dev tools
+* Maybe some web app
+
+== IntelliJ
+
+IntelliJ - change request, push Jetbrains 
+
 
 == Summary
 :incremental!:
