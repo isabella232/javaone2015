@@ -1,0 +1,22 @@
+== Presentations
+
+Presentations and resources related to Apache Maven and Takari:
+
+* Intro and slides
+* Examples 
+
+Documentation for writing or using the presentations can be found at 
+https://code.google.com/p/asciidoc-slidy2-backend-plugin/.
+
+http://asciidoc-slidy2-backend-plugin.googlecode.com/svn/trunk/doc/slidy2_doc.txt
+
+=== Modifications
+
+If you need to modify and rebuild the slides, modify the source in the
++src+ folder and run
+
+----
+./generate.sh 
+----
+
+asciidoc with slidy2 backend install required.
