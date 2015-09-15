@@ -14,6 +14,8 @@ function render {
     
 #    a2x -k -fpdf --dblatex-opts="-P toc.section.depth=1 -P latex.output.revhistory=0 -P doc.publisher.show=0" -D `pwd` src/$1.asciidoc
 #    echo "  Built $1.pdf"
+#    rm $1.xml
+
     echo -e "Completed Processing $1\n"
 }
 
