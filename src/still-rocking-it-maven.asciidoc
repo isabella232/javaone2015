@@ -4,7 +4,7 @@
 :Date: October 2015
 :max-width: 45em
 :icons:
-:copyright: Copyright 2015-present, Takari and similgility, All Rights Reserved.
+:copyright: Copyright 2015-present, Takari and simpligility, All Rights Reserved.
 :incremental:
 
 == Apache Maven - Still Rocking It
@@ -28,11 +28,16 @@ Manfred Moser
 TIP: Hold on tight, this is going to be a wild ride!
 
 == Before We Get Started 
+:incremental:
 
-* Maven is opinionated!
-
+* Maven is opinionated...
 * And so are we!
- 
+* If you want to program your own build
+* Use Ant
+* Or Gradle
+
+WARNING: Hahahahahaha
+
 == Before We Get Started - Once More 
 
 Best Practice - Do NOT use old, unsupported stuff!
@@ -49,7 +54,21 @@ TIP: Unless of course you are prepared to maintain those projects yourself....
 
 == Now Lets Get Started - Maven Wrapper
 
-wrapper
+No need to install Maven
+
+* e.g. on your CI server nodes
+
+----
+mvn -N io.takari:maven:wrapper
+----
+
+And then just do 
+
+----
+./mvnw clean install
+----
+
+or whatever.. 
 
 == .mvn Configuration
 
@@ -127,11 +146,14 @@ maybe .. depending on status, at least update what is there and what is coming
 Docker Maven Plugin from spotify
 
 
+////
+commented out for now.. 
 == Best Practice - Repo Manager
 
 * Use a Maven repo manager
 
 * That is open source ;-) 
+
 
 == Otto
 
@@ -142,6 +164,7 @@ Docker Maven Plugin from spotify
 * For Maven users
 
 * No thrills
+/////
 
 == Related tool
 
@@ -171,8 +194,8 @@ Questions, Remarks &  Discussion
 TIP: Slides and examples at http://github.com/takari/javaone2015
 
 == Resources
-:incremental!:
+:incremental:
 
-* one 
+* https://github.com/takari/maven-wrapper[Maven Wrapper] 
 
 * two
