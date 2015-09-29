@@ -13,17 +13,13 @@
 [quote]
 A Dozen Demos and Great News for Apache Maven Users
 
-Jason van Zyl
+Jason van Zyl 
 
-* Apache Maven Founder
-* http://twitter.com/jvanzyl[#jvanzyl] 
-* http://www.takari.io[www.takari.io]
+* Apache Maven Founder / http://twitter.com/jvanzyl[#jvanzyl]  / http://www.takari.io[www.takari.io]
 
 Manfred Moser
 
-* Apache Maven Committer and Trainer 
-* http://twitter.com/simpligility[#simpligility]
-* http://www.simpligility.com[www.simpligility.com]
+* Apache Maven Committer and Trainer / http://twitter.com/simpligility[#simpligility] / http://www.simpligility.com[www.simpligility.com]
 
 TIP: Hold on tight, this is going to be a wild ride!
 
@@ -31,68 +27,83 @@ TIP: Hold on tight, this is going to be a wild ride!
 :incremental:
 
 * Maven is opinionated...
-* And so are we!
-* If you want to program your own build
-* Use Ant
-* Or Gradle
+* And so are the developers!
+* Follow best practices, to make your life easier
+* Maven is open source
+* Work happens on latest code
+* Old releases receive no attention or support 
 
-WARNING: Hahahahahaha
-
-== Before We Get Started - Once More 
-
-Best Practice - Do NOT use old, unsupported stuff!
+== Do NOT Use Old Maven Versions
 
 * Maven 1 (doh!)
 * Maven 2
-* Therefore also not Maven Ant Tasks! 
+* Maven Ant Tasks (based on Maven 2 and unmaintained) 
 * Maven 3.0.x (yes, not that one either)
 * Maven 3.1.x. and Maven 3.2.x
-* Old M2e and Eclipse versions
-* IntelliJ, Netbeans, ... lots talk about that later
 
-TIP: Unless of course you are prepared to maintain those projects yourself....
+TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
+
+== Avoid Other Old Stuff 
+
+Also be careful about
+
+* IDEs using old Maven versions
+* Old IDE plugins
+* Old Maven plugins
+* JDK 4,5,6 and 7 usage
 
 == Now Lets Get Started - Maven Wrapper
 
 No need to install Maven
 
-* e.g. on your CI server nodes
-
 ----
 mvn -N io.takari:maven:wrapper
 ----
 
-And then just do 
+And then just use similar commands to 
 
 ----
 ./mvnw clean install
 ----
 
-or whatever.. 
+* Unix and Windows scripts
+* Automatic download and install of Maven
+* Uses ~/.m2/wrapper
+* Removes need to provision Maven
 
 == .mvn Configuration
 
-tbd
+* Project local configuration folder
+* Maven 3.3.1+
+* Control how project is built
+* Extension loading
+* JVM configuration
+
+TIP: No more global MAVEN_OPTS because of a specific project's needs.
 
 == Core Extensions
 
-tbd
+Allow different Maven behavior e.g. 
 
+* Parse pom in different syntax - Polyglot Maven 
+* Different behavior for local repo access
+* Reactor ordering 
+* tbd
 
 == Control Your Tools
 
-Above controls Maven and config
+Beyond wrapper and .mvn
 
-Next step - control plugin versions - use organization pom like progressive-organization-pom 
- 
-Use Enforcer plugin
+* Control plugin versions 
+** e.g. extend https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom] 
+* Use http://maven.apache.org/enforcer/maven-enforcer-plugin/[Enforcer plugin]
+** with standard or http://www.mojohaus.org/extra-enforcer-rules/[extra rules]
+** or write your own rules
 
 == Extensions Examples
 
 * Concurrent repo access
 * Smart builder
-
-
 
 == Example Polyglot Maven
 
@@ -166,9 +177,10 @@ commented out for now..
 * No thrills
 /////
 
-== Related tool
+== Repository Tools
 
 * maven repository tools
+* https://github.com/simpligility/maven-repository-tools
 
 == Eclipse and M2e
 
@@ -180,11 +192,25 @@ commented out for now..
 
 IntelliJ - change request, push Jetbrains 
 
+== Netbeans
+
+?? 
 
 == Summary
 :incremental!:
 
 tbd
+
+
+== Next?
+:incremental!:
+
+Join us for a Maven Hangout On Air
+
+* Demo your solution or tip
+* Ask your question
+* Discuss user questions
+* And developer questions
 
 == The End 
 :incremental!:
@@ -193,9 +219,9 @@ Questions, Remarks &  Discussion
 
 TIP: Slides and examples at http://github.com/takari/javaone2015
 
-== Resources
+== Misc Resources
 :incremental:
 
 * https://github.com/takari/maven-wrapper[Maven Wrapper] 
+* http://takari.io/book/index.html[TEAM documentation]
 
-* two
