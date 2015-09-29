@@ -19,7 +19,7 @@ div.sect1 h1 {
   text-align: right;
   background-repeat: no-repeat;
   background-image: url("src/images/logo.png");
-  background-position: 5px 5px;
+  background-position: 5px 20px;
 }
 
 /*div.slide div.sect1 h1, div.slide div.sect2 h1, div.slide div.sect3 h1 {
