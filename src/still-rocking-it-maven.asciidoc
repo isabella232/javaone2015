@@ -24,16 +24,19 @@ Manfred Moser
 TIP: Hold on tight, this is going to be a wild ride!
 
 == Before We Get Started 
-:incremental:
+:incremental!:
 
 * Maven is opinionated...
 * And so are the developers!
 * Follow best practices, to make your life easier
 * Maven is open source
 * Work happens on latest code
-* Old releases receive no attention or support 
+* Old releases receive no attention or support
+
+TIP: Don't worry! Its not that bad at all.
 
 == Do NOT Use Old Maven Versions
+:incremental:
 
 * Maven 1 (doh!)
 * Maven 2
@@ -44,17 +47,42 @@ TIP: Hold on tight, this is going to be a wild ride!
 TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
 
 == Avoid Other Old Stuff 
+:incremental!:
 
 Also be careful about
 
 * IDEs using old Maven versions
 * Old IDE plugins
 * Old Maven plugins
-* JDK 4,5,6 and 7 usage
+* JDK 4, 5, 6, and 7 usage
 
-== Now Lets Get Started - Maven Wrapper
+== Now Let's Get Started
+:incremental!:
 
-No need to install Maven
+* Simplify project build
+* Control project build
+* Improve development
+* And build performance
+* And much more
+
+== Where Are We At?
+
+* Apache Maven 3.3.3
+* Apache Maven Plugins - require 3+
+* Java 1.7+
+* Codehaus Plugins migrated to http://www.mojohaus.org/[MojoHaus]
+
+== Misc Newer Features
+
+* JSR330 for extensions and plugin
+* Transitive dependency excludes
+* Pluggable reactor
+* Version values allow `${revision}`, `${sha1}`, `${changelist}`
+* Version ranges in parent
+* Central Repository defaults to HTTPS
+
+== Maven Wrapper
+:incremental!:
 
 ----
 mvn -N io.takari:maven:wrapper
@@ -64,33 +92,59 @@ And then just use similar commands to
 
 ----
 ./mvnw clean install
+mvn.bat clean install
 ----
+
+== Maven Wrapper
+:incremental!:
 
 * Unix and Windows scripts
 * Automatic download and install of Maven
-* Uses ~/.m2/wrapper
+* Uses `~/.m2/wrapper`
 * Removes need to provision Maven
+* Specifies Maven version
+* For developer and CI server provisioning
+
 
 == .mvn Configuration
+:incremental!:
 
 * Project local configuration folder
+* Therefore version controlled with source
 * Maven 3.3.1+
-* Control how project is built
-* Extension loading
-* JVM configuration
+* Controls how project is built
+* Allows for extension loading
 
-TIP: No more global MAVEN_OPTS because of a specific project's needs.
+== .mvn JVM Configuration
+:incremental!:
+
+* `.mvn/jvm.config`
+* No more global `MAVEN_OPTS`
+
+== .mvn Maven Configuration
+:incremental!:
+
+* `.mvn/maven.config`
+* Maven invocation parameters
+
+----
+--T 8
+--builder smart
+--U
+----
 
 == Core Extensions
+:incremental!:
 
 Allow different Maven behavior e.g. 
 
 * Parse pom in different syntax - Polyglot Maven 
 * Different behavior for local repo access
 * Reactor ordering 
-* tbd
+* `.mvn/extensions.xml`
 
 == Control Your Tools
+:incremental!:
 
 Beyond wrapper and .mvn
 
@@ -101,100 +155,111 @@ Beyond wrapper and .mvn
 ** or write your own rules
 
 == Extensions Examples
+:incremental!:
 
 * Concurrent repo access
 * Smart builder
 
+== Reactor Improvements
+:incremental!:
+
+Traditional Parallel
+
+----
+mvn -T 4 clean deploy
+----
+
+Takari Smart Builder
+
+----
+mvn clean deploy --builder smart -T4
+----
+
 == Example Polyglot Maven
+:incremental!:
 
 links and more
 
-jruby - build example 
+https://github.com/jruby/jruby[JRuby]  - build example 
 
-snakeyaml
+https://bitbucket.org/asomov/snakeyaml/src[snakeyaml]
 
-presto
+presto - WHERE? 
 
 
 == Maven Shell
+:incremental!:
 
-tbd
+tbd WHERE
 
 == Takari Lifecycle
+:incremental!:
 
-tbd
+tbd add details
 
 incremental build library
 
 == Incremental Example
+:incremental!:
 
 Example of to make incremental plugin (antlr build)
 
-== Maven dev tools
-
-Awesome for Maven dev and plugin dev
-
 == Maven Testing Tools and Beyond
+:incremental!:
 
 test project generator from dot files
 
 proto plugin - archetype replacement - maybe
 
 == Plugin Testing
+:incremental!:
 
 plugin testing framework including IDE support
 
 == Plugin Testing Examples
+:incremental!:
 
 Android Maven Plugin and NDK Plugin
 
 == Generations
+:incremental!:
 
 maybe .. depending on status, at least update what is there and what is coming
 
-== Other Cool Stuff
+== Maven Development Tools
+:incremental!:
 
-Docker Maven Plugin from spotify
-
-
-////
-commented out for now.. 
-== Best Practice - Repo Manager
-
-* Use a Maven repo manager
-
-* That is open source ;-) 
-
-
-== Otto
-
-* New pure-play open source repository manager
-
-* Build by Maven users
-
-* For Maven users
-
-* No thrills
-/////
-
-== Repository Tools
-
-* maven repository tools
-* https://github.com/simpligility/maven-repository-tools
+Awesome for Maven dev and plugin dev
 
 == Eclipse and M2e
+:incremental!:
 
 * including polyglot extensions from Fred
 * Maven dev tools
 * Maybe some web app
 
 == IntelliJ
+:incremental!:
 
 IntelliJ - change request, push Jetbrains 
 
 == Netbeans
+:incremental!:
 
-?? 
+?? tbd - download and check it out
+
+
+== Other Cool Stuff
+:incremental!:
+
+Lots of things happening: 
+
+* Docker Maven Plugins from https://github.com/spotify/docker-maven-plugin[spotify] and others
+* http://simpligility.github.io/android-maven-plugin/[Android Maven Plugin] and beyond
+* https://github.com/maven-nar[Maven NAR] 
+* Various JS and web development related plugins
+* https://github.com/simpligility/maven-repository-tools[Maven Repository Tools]
+* flatten-maven-plugin
 
 == Summary
 :incremental!:
@@ -217,11 +282,10 @@ Join us for a Maven Hangout On Air
 
 Questions, Remarks &  Discussion
 
-TIP: Slides and examples at http://github.com/takari/javaone2015
+TIP: Slides and examples at http://github.com/takari/javaone2015[http://github.com/takari/javaone2015]
 
-== Misc Resources
+== Other Resources
 :incremental:
 
-* https://github.com/takari/maven-wrapper[Maven Wrapper] 
 * http://takari.io/book/index.html[TEAM documentation]
 
