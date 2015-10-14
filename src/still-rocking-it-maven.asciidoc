@@ -23,6 +23,12 @@ Manfred Moser
 
 TIP: Hold on tight, this is going to be a wild ride!
 
+== What Are You Going to Learn? 
+
+* Tips & tricks
+* Best practices
+* New tools, plugins, ...
+
 == Before We Get Started 
 :incremental!:
 
@@ -33,25 +39,27 @@ TIP: Hold on tight, this is going to be a wild ride!
 * Work happens on latest code
 * Old releases receive no attention or support
 
-TIP: Don't worry! Its not that bad at all.
+TIP: Don't worry! It's not that bad at all.
 
 == Do NOT Use Old Maven Versions
 :incremental:
 
-* Maven 1 (doh!)
-* Maven 2
-* Maven Ant Tasks (based on Maven 2 and unmaintained) 
-* Maven 3.0.x (yes, not that one either)
-* Maven 3.1.x. and Maven 3.2.x
+* Maven 1 - doh!
+* Maven 2 - seriously, just don't do it
+* Maven Ant Tasks - based on Maven 2 and unmaintained
+* Maven 3.0.x - old but stable != should be used
+* Maven 3.1.x - old with issues ! = should be used
+* Maven 3.2.x - new but not latest supported ! = should be used
 
-TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
+-> Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
 
 == Avoid Other Old Stuff 
 :incremental!:
 
-Also be careful about
+Be careful about
 
 * IDEs using old Maven versions
+* Using different version on command line / CI server
 * Old IDE plugins
 * Old Maven plugins
 * JDK 4, 5, 6, and 7 usage
@@ -69,7 +77,7 @@ Also be careful about
 
 * Apache Maven 3.3.3
 * Apache Maven Plugins - require 3+
-* Java 1.7+
+* Java 1.7+ for build execution
 * Codehaus Plugins migrated to http://www.mojohaus.org/[MojoHaus]
 
 == Misc Newer Features
@@ -80,6 +88,18 @@ Also be careful about
 * Version values allow `${revision}`, `${sha1}`, `${changelist}`
 * Version ranges in parent
 * Central Repository defaults to HTTPS
+
+== Maven Wrapper
+:incremental!:
+
+* Unix and Windows scripts 
+* Within project structure
+* Automatic download and install of Maven
+* Uses `~/.m2/wrapper`
+* Removes need to provision Maven
+* For developer and CI server provisioning
+* Specifies Maven version
+
 
 == Maven Wrapper
 :incremental!:
@@ -95,21 +115,11 @@ And then just use similar commands to
 mvn.bat clean install
 ----
 
-== Maven Wrapper
-:incremental!:
-
-* Unix and Windows scripts
-* Automatic download and install of Maven
-* Uses `~/.m2/wrapper`
-* Removes need to provision Maven
-* Specifies Maven version
-* For developer and CI server provisioning
-
 
 == .mvn Configuration
 :incremental!:
 
-* Project local configuration folder
+* Project-local configuration folder
 * Therefore version controlled with source
 * Maven 3.3.1+
 * Controls how project is built
@@ -120,6 +130,10 @@ mvn.bat clean install
 
 * `.mvn/jvm.config`
 * No more global `MAVEN_OPTS`
+
+----
+TBD
+----
 
 == .mvn Maven Configuration
 :incremental!:
@@ -140,8 +154,15 @@ Allow different Maven behavior e.g.
 
 * Parse pom in different syntax - Polyglot Maven 
 * Different behavior for local repo access
-* Reactor ordering 
-* `.mvn/extensions.xml`
+* Reactor ordering
+
+== Core Extensions
+ 
+`.mvn/extensions.xml`:
+
+----
+TBD
+----
 
 == Control Your Tools
 :incremental!:
@@ -180,6 +201,8 @@ mvn clean deploy --builder smart -T4
 :incremental!:
 
 links and more
+
+https://github.com/takari/polyglot-maven-examples
 
 https://github.com/jruby/jruby[JRuby]  - build example 
 
@@ -249,6 +272,17 @@ IntelliJ - change request, push Jetbrains
 
 ?? tbd - download and check it out
 
+== Central Repository - Now
+
+* HTTPS
+* international, high performance CDN
+* supported by Sonatype
+
+== Central Repository - Next
+
+* https://http2.github.io/[HTTP/2] (evolved SPDY)
+* Additional hosted at Google Cloud Storage
+* TBD
 
 == Other Cool Stuff
 :incremental!:
