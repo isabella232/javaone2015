@@ -149,7 +149,8 @@ Allow different Maven behavior e.g.
 Beyond wrapper and .mvn
 
 * Control plugin versions 
-** e.g. extend https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom] 
+** e.g. extend https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom]
+** various Maven controlled parents
 * Use http://maven.apache.org/enforcer/maven-enforcer-plugin/[Enforcer plugin]
 ** with standard or http://www.mojohaus.org/extra-enforcer-rules/[extra rules]
 ** or write your own rules
