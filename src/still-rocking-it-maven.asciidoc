@@ -15,11 +15,11 @@ A Dozen Demos and Great News for Apache Maven Users
 
 Jason van Zyl 
 
-* Apache Maven Founder / http://twitter.com/jvanzyl[#jvanzyl]  / http://www.takari.io[www.takari.io]
+* Apache Maven Founder / http://twitter.com/jvanzyl[@jvanzyl]  / http://www.takari.io[www.takari.io]
 
 Manfred Moser
 
-* Apache Maven Committer and Trainer / http://twitter.com/simpligility[#simpligility] / http://www.simpligility.com[www.simpligility.com]
+* Apache Maven Committer and Trainer / http://twitter.com/simpligility[@simpligility] / http://www.simpligility.com[www.simpligility.com]
 
 TIP: Hold on tight, this is going to be a wild ride!
 
@@ -29,29 +29,37 @@ TIP: Hold on tight, this is going to be a wild ride!
 * Best practices
 * New tools, plugins, ...
 
+-> Lots of stuff happening in the Apache Maven ecosystem!
+
 == Before We Get Started 
 :incremental!:
 
 * Maven is opinionated...
 * And so are the developers!
 * Follow best practices, to make your life easier
+
+And...
+
 * Maven is open source
 * Work happens on latest code
 * Old releases receive no attention or support
+* There is no one company behind Maven - its a community!
 
-TIP: Don't worry! It's not that bad at all.
+TIP: Don't worry! It's not bad, it's good!
 
 == Do NOT Use Old Maven Versions
 :incremental:
 
 * Maven 1 - doh!
-* Maven 2 - seriously, just don't do it
-* Maven Ant Tasks - based on Maven 2 and unmaintained
+* Maven 2 - seriously, just don't do it!
+* Maven Ant Tasks - nope, based on Maven 2 and unmaintained
 * Maven 3.0.x - old but stable != should be used
 * Maven 3.1.x - old with issues ! = should be used
 * Maven 3.2.x - new but not latest supported ! = should be used
 
 -> Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
+
+TIP: And keep up to date with newer releases!
 
 == Avoid Other Old Stuff 
 :incremental!:
@@ -67,10 +75,13 @@ Be careful about
 == Now Let's Get Started
 :incremental!:
 
+We will look at things that ...
+
 * Simplify project build
 * Control project build
 * Improve development
 * And build performance
+* Provide new tools
 * And much more
 
 == Where Are We At?
@@ -80,9 +91,9 @@ Be careful about
 * Java 1.7+ for build execution
 * Codehaus Plugins migrated to http://www.mojohaus.org/[MojoHaus]
 
-== Misc Newer Features
+== Misc Newer 'Small' Features
 
-* JSR330 for extensions and plugin
+* JSR330-based injection for extensions and plugin
 * Transitive dependency excludes
 * Pluggable reactor
 * Version values allow `${revision}`, `${sha1}`, `${changelist}`
@@ -93,7 +104,7 @@ Be careful about
 :incremental!:
 
 * Unix and Windows scripts 
-* Within project structure
+* Within project structure - version controlled
 * Automatic download and install of Maven
 * Uses `~/.m2/wrapper`
 * Removes need to provision Maven
@@ -120,19 +131,20 @@ mvn.bat clean install
 :incremental!:
 
 * Project-local configuration folder
-* Therefore version controlled with source
+* Version controlled with source
 * Maven 3.3.1+
 * Controls how project is built
 * Allows for extension loading
+* In root folder of multi-module project
 
 == .mvn JVM Configuration
 :incremental!:
 
-* `.mvn/jvm.config`
-* No more global `MAVEN_OPTS`
+* No more global, polluted `MAVEN_OPTS`
+* `.mvn/jvm.config`: 
 
 ----
-TBD
+-Xmx8192m
 ----
 
 == .mvn Maven Configuration
@@ -150,18 +162,31 @@ TBD
 == Core Extensions
 :incremental!:
 
-Allow different Maven behavior e.g. 
+Allow different Maven behavior e.g.: 
 
-* Parse pom in different syntax - Polyglot Maven 
-* Different behavior for local repo access
+* Local repository access
 * Reactor ordering
+* Parse pom in different syntax - Polyglot Maven 
+* Large potential, but be careful...
 
 == Core Extensions
  
 `.mvn/extensions.xml`:
 
 ----
-TBD
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+  <extension>
+    <groupId>io.takari.maven</groupId>
+    <artifactId>takari-smart-builder</artifactId>
+    <version>0.4.1</version>
+  </extension>
+  <extension>
+    <groupId>io.takari.aether</groupId>
+    <artifactId>takari-concurrent-localrepo</artifactId>
+     <version>0.0.7</version>
+  </extension>
+</extensions>
 ----
 
 == Control Your Tools
@@ -180,7 +205,9 @@ Beyond wrapper and .mvn
 :incremental!:
 
 * Concurrent repo access
+** TBD detail what it does and why
 * Smart builder
+** TBD detail about it .. see next slides.. 
 
 == Reactor Improvements
 :incremental!:
@@ -197,31 +224,69 @@ Takari Smart Builder
 mvn clean deploy --builder smart -T4
 ----
 
-== Example Polyglot Maven
+TBD - insert image from docs, link to docs
+
+== Polyglot Maven
 :incremental!:
 
-links and more
+* Support for POM written in 
+** Groovy
+** YAML
+** Ruby
+** Others
+* Produces POM for deployment and tool support
+* https://github.com/takari/polyglot-maven[Project] and 
+https://github.com/takari/polyglot-maven-examples[Examples] available
 
-https://github.com/takari/polyglot-maven-examples
+== JRuby Build
 
-https://github.com/jruby/jruby[JRuby]  - build example 
+* Uses Maven
+* And Maven Wrapper
+* Polyglot Maven `pom.rb`
 
-https://bitbucket.org/asomov/snakeyaml/src[snakeyaml]
+----
+<extension>
+  <groupId>io.takari.polyglot</groupId>
+  <artifactId>polyglot-ruby</artifactId>
+  <version>0.1.11</version>
+</extension>
+----
 
-presto - WHERE? 
+TIP: https://github.com/jruby/jruby[Check it out.]
 
+== SnakeYAML
+
+* Uses Maven 
+* And Maven Wrapper
+* Polyglot Maven `pom.yaml`
+
+----
+<extension>
+  <groupId>io.takari.polyglot</groupId>
+  <artifactId>polyglot-yaml</artifactId>
+  <version>0.1.12</version>
+</extension>
+----
+
+TIP: See the https://bitbucket.org/asomov/snakeyaml/src[source.]
 
 == Maven Shell
 :incremental!:
+
+https://github.com/takari/takari-shell
 
 tbd WHERE
 
 == Takari Lifecycle
 :incremental!:
 
-tbd add details
 
-incremental build library
+http://takari.io/book/40-lifecycle.html#the-takari-lifecycle
+
+* extensions
+* takari-jar packaging
+* one plugin for whole lifecycle
+* incremental build library
 
 == Incremental Example
 :incremental!:
@@ -244,6 +309,7 @@ plugin testing framework including IDE support
 :incremental!:
 
 Android Maven Plugin and NDK Plugin
+Show config and IDE integration and such
 
 == Generations
 :incremental!:
@@ -254,6 +320,9 @@ maybe .. depending on status, at least update what is there and what is coming
 :incremental!:
 
 Awesome for Maven dev and plugin dev
+Have M2e run Maven from within workspace
+
+
 
 == Eclipse and M2e
 :incremental!:
@@ -275,20 +344,25 @@ IntelliJ - change request, push Jetbrains
 == Central Repository - Now
 
 * HTTPS
-* international, high performance CDN
-* supported by Sonatype
+* International, high performance CDN
+* Supported by Sonatype
 
 == Central Repository - Next
 
-* https://http2.github.io/[HTTP/2] (evolved SPDY)
-* Additional hosted at Google Cloud Storage
-* TBD
+Full replication to Google Cloud Storage:
 
+* Playground for data-mining and exploration
+* Experiments with new features like
+** https://http2.github.io/[HTTP/2] (evolved SPDY)
+** Search service
+** more.. 
+ 
 == Other Cool Stuff
 :incremental!:
 
 Lots of things happening: 
 
+* Evolving Apache and Mojohaus plugins
 * Docker Maven Plugins from https://github.com/spotify/docker-maven-plugin[spotify] and others
 * http://simpligility.github.io/android-maven-plugin/[Android Maven Plugin] and beyond
 * https://github.com/maven-nar[Maven NAR] 
@@ -299,13 +373,14 @@ Lots of things happening:
 == Summary
 :incremental!:
 
-tbd
-
+* Lots of things are moving
+* We only touched the tip of the iceberg
+* What did you contribute?
 
 == Next?
 :incremental!:
 
-Join us for a Maven Hangout On Air
+Join us for a Maven Hangout On Air -TBD link insert to x
 
 * Demo your solution or tip
 * Ask your question
@@ -317,7 +392,7 @@ Join us for a Maven Hangout On Air
 
 Questions, Remarks &  Discussion
 
-TIP: Slides and examples at http://github.com/takari/javaone2015[http://github.com/takari/javaone2015]
+TIP: Slides and examples at http://takari.github.io/javaone2015/[http://takari.github.io/javaone2015/]
 
 == Other Resources
 :incremental:
