@@ -2,6 +2,10 @@ h1 {
   color: #4c4c4c;
 }
 
+div.slide div {
+  font-size: 20pt;
+}
+
 div.sect1 h1 {
   margin: 0px;
   padding-bottom: 20px;

@@ -53,24 +53,24 @@ TIP: Don't worry! It's not bad, it's good!
 * Maven 1 - doh!
 * Maven 2 - seriously, just don't do it!
 * Maven Ant Tasks - nope, based on Maven 2 and unmaintained
-* Maven 3.0.x - old but stable != should be used
-* Maven 3.1.x - old with issues ! = should be used
-* Maven 3.2.x - new but not latest supported ! = should be used
+* Maven 3.0.x - old but stable
+* Maven 3.1.x - old with issues
+* Maven 3.2.x - new but not latest supported
+* 'None' of the above should be used
+* Instead keep up to date with newer releases
 
--> Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
-
-TIP: And keep up to date with newer releases!
+TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
 
 == Avoid Other Old Stuff 
 :incremental!:
 
-Be careful about
+Be 'very' careful about
 
 * IDEs using old Maven versions
 * Using different version on command line / CI server
 * Old IDE plugins
 * Old Maven plugins
-* JDK 4, 5, 6, and 7 usage
+* JDK 4, 5, and 6 usage
 
 == Now Let's Get Started
 :incremental!:
@@ -94,23 +94,22 @@ We will look at things that ...
 == Misc Newer 'Small' Features
 
 * JSR330-based injection for extensions and plugin
-* Transitive dependency excludes
+* Transitive dependency `<exclusions>` with `*`
 * Pluggable reactor
 * Version values allow `${revision}`, `${sha1}`, `${changelist}`
-* Version ranges in parent
-* Central Repository defaults to HTTPS
+* Version ranges in `<parent>`
+* Central Repository access defaults to HTTPS
 
 == Maven Wrapper
 :incremental!:
 
 * Unix and Windows scripts 
-* Within project structure - version controlled
+* Within project structure -> version controlled
 * Automatic download and install of Maven
-* Uses `~/.m2/wrapper`
+* Uses `~/.m2/wrapper` as cache
 * Removes need to provision Maven
 * For developer and CI server provisioning
 * Specifies Maven version
-
 
 == Maven Wrapper
 :incremental!:
@@ -123,19 +122,25 @@ And then just use similar commands to
 
 ----
 ./mvnw clean install
-mvn.bat clean install
+mvnw.bat clean install
 ----
 
-
-== .mvn Configuration
+== Project Local Configuration
 :incremental!:
 
-* Project-local configuration folder
+`.mvn` directory
+
+* Project local
+* In root folder of multi-module project
 * Version controlled with source
 * Maven 3.3.1+
 * Controls how project is built
-* Allows for extension loading
-* In root folder of multi-module project
+
+Used for
+
+* JVM configuration
+* Maven configuration
+* Core extension loading
 
 == .mvn JVM Configuration
 :incremental!:
@@ -159,72 +164,87 @@ mvn.bat clean install
 --U
 ----
 
-== Core Extensions
+== Core Extension Loading
 :incremental!:
 
-Allow different Maven behavior e.g.: 
+Allow different behavior of Maven itself
 
+* Larger scope and impact than plugins 
 * Local repository access
-* Reactor ordering
-* Parse pom in different syntax - Polyglot Maven 
-* Large potential, but be careful...
+* Module ordering in reactor
+* Parse POM in different syntax - Polyglot Maven 
 
-== Core Extensions
- 
+WARNING: Large potential, but be careful...
+
+== Core Extensions Loading
+:incremental!:
+
 `.mvn/extensions.xml`:
 
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <extensions>
   <extension>
-    <groupId>io.takari.maven</groupId>
-    <artifactId>takari-smart-builder</artifactId>
-    <version>0.4.1</version>
-  </extension>
-  <extension>
     <groupId>io.takari.aether</groupId>
     <artifactId>takari-concurrent-localrepo</artifactId>
      <version>0.0.7</version>
   </extension>
+  <extension>
+    <groupId>io.takari.maven</groupId>
+    <artifactId>takari-smart-builder</artifactId>
+    <version>0.4.1</version>
+  </extension>
 </extensions>
 ----
 
-== Control Your Tools
+== Control Your Build
 :incremental!:
 
 Beyond wrapper and .mvn
 
-* Control plugin versions 
-** e.g. extend https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom]
+* Control plugin versions with organization POM
+** https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom]
+** https://github.com/basepom/basepom[basepom]
 ** various Maven controlled parents
 * Use http://maven.apache.org/enforcer/maven-enforcer-plugin/[Enforcer plugin]
 ** with standard or http://www.mojohaus.org/extra-enforcer-rules/[extra rules]
 ** or write your own rules
 
-== Extensions Examples
-:incremental!:
+[quote]
+Back to the shiny, new extensions...
 
-* Concurrent repo access
-** TBD detail what it does and why
-* Smart builder
-** TBD detail about it .. see next slides.. 
+== Concurrent Local Repository Access
+
+* Multiple builds running
+* E.g. running on CI server
+* Using `install`
+
+-> Can corrupt maven-metadata...
 
 == Reactor Improvements
 :incremental!:
 
-Traditional Parallel
+image::images/smart-builder-scheduler.png[scale=80]
+
+
+== Reactor Improvements
+:incremental!:
+
+Use extension or install in lib
+
+Traditional Parallel::
 
 ----
 mvn -T 4 clean deploy
 ----
 
-Takari Smart Builder
+Takari Smart Builder::
 
 ----
 mvn clean deploy --builder smart -T4
 ----
 
-TBD - insert image from docs, link to docs
+TIP: Check out the http://takari.io/book/30-team-maven.html#takari-smart-builder[documentation].
 
 == Polyglot Maven
 :incremental!:
@@ -237,8 +257,10 @@ TBD - insert image from docs, link to docs
 * Produces POM for deployment and tool support
 * https://github.com/takari/polyglot-maven[Project] and 
 https://github.com/takari/polyglot-maven-examples[Examples] available
+* Short and clear
+* Take advantage of language/markup
 
-== JRuby Build
+== Polyglot Example - JRuby Build
 
 * Uses Maven
 * And Maven Wrapper
@@ -254,7 +276,7 @@ https://github.com/takari/polyglot-maven-examples[Examples] available
 
 TIP: https://github.com/jruby/jruby[Check it out.]
 
-== SnakeYAML
+== Polyglot Example - SnakeYAML
 
 * Uses Maven 
 * And Maven Wrapper
@@ -270,16 +292,30 @@ TIP: https://github.com/jruby/jruby[Check it out.]
 
 TIP: See the https://bitbucket.org/asomov/snakeyaml/src[source.]
 
+== Polyglot Example - 
+
+TBD do we have a good groovy example? 
+
 == Maven Shell
 :incremental!:
 
 https://github.com/takari/takari-shell
 
-tbd WHERE
+TBD do we add this, what do we show/say
+
+== Incremental Build
+
+TBD - talk about library
+
+== Incremental Example
+:incremental!:
+
+TBD Example of to make incremental plugin (antlr build)
 
 == Takari Lifecycle
 :incremental!:
 
+TBD
 
 http://takari.io/book/40-lifecycle.html#the-takari-lifecycle
 
@@ -288,13 +324,10 @@ http://takari.io/book/40-lifecycle.html#the-takari-lifecycle
 * one plugin for whole lifecycle
 * incremental build library
 
-== Incremental Example
-:incremental!:
-
-Example of to make incremental plugin (antlr build)
-
 == Maven Testing Tools and Beyond
 :incremental!:
+
+TBD
 
 test project generator from dot files
 
@@ -303,10 +336,14 @@ proto plugin - archetype replacement - maybe
 == Plugin Testing
 :incremental!:
 
+TBD 
+
 plugin testing framework including IDE support
 
 == Plugin Testing Examples
 :incremental!:
+
+TBD
 
 Android Maven Plugin and NDK Plugin
 Show config and IDE integration and such
@@ -314,10 +351,14 @@ Show config and IDE integration and such
 == Generations
 :incremental!:
 
+TBD
+
 maybe .. depending on status, at least update what is there and what is coming
 
 == Maven Development Tools
 :incremental!:
+
+TBD
 
 Awesome for Maven dev and plugin dev
 Have M2e run Maven from within workspace
@@ -327,6 +368,8 @@ Have M2e run Maven from within workspace
 == Eclipse and M2e
 :incremental!:
 
+TBD
+
 * including polyglot extensions from Fred
 * Maven dev tools
 * Maybe some web app
@@ -334,20 +377,27 @@ Have M2e run Maven from within workspace
 == IntelliJ
 :incremental!:
 
+TBD
+
 IntelliJ - change request, push Jetbrains 
 
 == Netbeans
 :incremental!:
 
+TBD
 ?? tbd - download and check it out
 
 == Central Repository - Now
+
+TBD
 
 * HTTPS
 * International, high performance CDN
 * Supported by Sonatype
 
 == Central Repository - Next
+
+TBD
 
 Full replication to Google Cloud Storage:
 
@@ -359,6 +409,8 @@ Full replication to Google Cloud Storage:
  
 == Other Cool Stuff
 :incremental!:
+
+TBD
 
 Lots of things happening: 
 
@@ -373,9 +425,13 @@ Lots of things happening:
 == Summary
 :incremental!:
 
+TBD
+
 * Lots of things are moving
 * We only touched the tip of the iceberg
 * What did you contribute?
+
+TIP: Join us!
 
 == Next?
 :incremental!:
@@ -394,8 +450,10 @@ Questions, Remarks &  Discussion
 
 TIP: Slides and examples at http://takari.github.io/javaone2015/[http://takari.github.io/javaone2015/]
 
-== Other Resources
+== Resources
 :incremental:
+
+* TBD link to maven site 
 
 * http://takari.io/book/index.html[TEAM documentation]
 
