@@ -73,6 +73,7 @@ Be 'very' careful about
 * JDK 4, 5, and 6 usage
 
 -> Keeping to use old stuff causes rotting.
+
 == Now Let's Get Started
 :incremental!:
 
@@ -87,7 +88,7 @@ We will look at things that ...
 
 == Where Are We At?
 
-* Apache Maven 3.3.3
+* Apache Maven 3.3.3/3.3.6
 * Apache Maven Plugins - require 3+
 * Java 1.7+ for build execution
 * Codehaus Plugins migrated to http://www.mojohaus.org/[MojoHaus]
@@ -201,7 +202,7 @@ WARNING: Large potential, but be careful...
 == Control Your Build
 :incremental!:
 
-Beyond wrapper and .mvn
+Beyond wrapper and `.mvn`
 
 * Control plugin versions with organization POM
 ** https://github.com/simpligility/progressive-organization-pom[progressive-organization-pom]
@@ -272,7 +273,7 @@ https://github.com/takari/polyglot-maven-examples[Examples] available
 <extension>
   <groupId>io.takari.polyglot</groupId>
   <artifactId>polyglot-ruby</artifactId>
-  <version>0.1.11</version>
+  <version>0.1.13</version>
 </extension>
 ----
 
@@ -310,7 +311,7 @@ project 'JRuby', 'https://github.com/jruby/jruby' do
 <extension>
   <groupId>io.takari.polyglot</groupId>
   <artifactId>polyglot-yaml</artifactId>
-  <version>0.1.12</version>
+  <version>0.1.13</version>
 </extension>
 ----
 
@@ -345,13 +346,15 @@ dependencies:
 <extension>
   <groupId>io.takari.polyglot</groupId>
   <artifactId>polyglot-groovy</artifactId>
-  <version>0.1.12</version>
+  <version>0.1.13</version>
 </extension>
 ----
 
 == pom.groovy
 
+////
 TBD do we have a good groovy example using it in 'production' 
+////
 
 ----
 project {
@@ -359,7 +362,12 @@ project {
   groupId 'io.takari.polyglot'
   artifactId 'groovy-project'
   version '0.0.1-SNAPSHOT'
-...
+  build {
+    $execute(id: 'hello', phase: 'validate') {
+      println "Groovy, meet Maven"
+    }           
+  }
+}
 ----
 
 ////
@@ -375,16 +383,21 @@ TBD do we add this, what do we show/say
 
 == Incremental Build
 
-Specific library to support:
+* Dedicated, generic API for incremental builds
+* Tracks inputs, processes and outputs
+* Maven-specific implementation included
 
-
+-> can be used to make Maven plugins support incremental behaviour easily
 
 TIP: Source on  https://github.com/takari/io.takari.incrementalbuild[GitHub]
 
+////
 == Incremental Example
 :incremental!:
 
 TBD Example of to make incremental plugin (antlr build)
+////
+
 
 == Takari Lifecycle
 :incremental!:
@@ -394,14 +407,16 @@ New Maven Plugin
 * Uses incremental support library for sources and resources
 * One plugin for whole lifecycle
 * Replaces default lifecycle plugins (resources, compiler, jar, install, deploy) 
-* Uses `extension`
-* `takari-jar` packaging
+* Uses `extensions`
+* Packaging `pom`, `takari-jar`, `takari-maven-plugin`, `takari-maven-component`
 * Eclipse Java compiler for improved incremental compilation
 
-TIP: http://takari.io/book/40-lifecycle.html#the-takari-lifecycle[Documentatio] and
+TIP: http://takari.io/book/40-lifecycle.html#the-takari-lifecycle[Documentation] and
 https://github.com/takari/takari-lifecycle[source] are open source.
 
 == Takari Lifecycle
+
+Example simple usage:
 
 ----
 <packaging>takari-jar</packaging>
@@ -415,8 +430,6 @@ https://github.com/takari/takari-lifecycle[source] are open source.
   </plugins>
 </build>
 ----
-
-TIP: Also works for POM and 
 
 == Maven Testing Tools and Beyond
 :incremental!:
@@ -442,12 +455,15 @@ TBD
 Android Maven Plugin and NDK Plugin
 Show config and IDE integration and such
 
+////
 == Generations
 :incremental!:
 
 TBD
 
 maybe .. depending on status, at least update what is there and what is coming
+////
+
 
 == Maven Development Tools
 :incremental!:
@@ -481,17 +497,40 @@ IntelliJ - change request, push Jetbrains
 TBD
 ?? tbd - download and check it out
 
-== Central Repository - Now
+== Central Repository 
+:incremental!:
 
-TBD
+[quote]
+aka. Maven Central
 
+* Largest Maven2 format repository
+* High performance, global CDN 
+* > 17 billion download in 2014
+* > 1 million GAV coordinates
+* Default in Apache Maven and others
 * HTTPS
-* International, high performance CDN
-* Supported by Sonatype
+
+-> Sponsored by Sonatype
+
+And the components come from...
+
+== OSSRH and Forges
+:incremental!:
+
+Input funnel for Central Repository
+
+* OSSRH - large deployment of Nexus Repository Manager
+* Apache, JBoss, ... - secondary Nexus instances
+* Community support - on-boarding and documentation
+
+== More OSSRH and Central Stats
+
+* currently about 100k projects total
+* approx. 3000 new projects each month (GA)
+* 10 - 30 project verified and onbarded per day
+* approx. 30.000 new releases each month (GAV)
 
 == Central Repository - Next
-
-TBD
 
 Full replication to Google Cloud Storage:
 
@@ -500,11 +539,11 @@ Full replication to Google Cloud Storage:
 ** https://http2.github.io/[HTTP/2] (evolved SPDY)
 ** Search service
 ** more.. 
+
+TIP: Contact us if you want to play with it.
  
 == Other Cool Stuff
 :incremental!:
-
-TBD
 
 Lots of things happening: 
 
@@ -519,18 +558,16 @@ Lots of things happening:
 == Summary
 :incremental!:
 
-TBD
-
 * Lots of things are moving
 * We only touched the tip of the iceberg
 * What did you contribute?
 
-TIP: Join us!
+TIP: Join us on the Maven users mailing list and beyond!
 
 == Next?
 :incremental!:
 
-Join us for a Maven Hangout On Air -TBD link insert to x
+Join us for a http://takari.io/events.html[Maven Hangout On Air]
 
 * Demo your solution or tip
 * Ask your question
@@ -547,7 +584,7 @@ TIP: Slides and examples at http://takari.github.io/javaone2015/[http://takari.g
 == Resources
 :incremental:
 
-* TBD link to maven site 
-
-* http://takari.io/book/index.html[TEAM documentation]
+* http://maven.apache.org/[Apache Maven]
+* http://www.mojohaus.org/[MojoHaus]
+* http://takari.io/book/index.html[Takari including documentation]
 
