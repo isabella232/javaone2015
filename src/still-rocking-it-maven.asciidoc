@@ -34,8 +34,8 @@ TIP: Hold on tight, this is going to be a wild ride!
 == Before We Get Started 
 :incremental!:
 
-* Maven is opinionated...
-* And so are the developers!
+* The developers of Maven are  opinionated...
+* And so is Maven itself
 * Follow best practices, to make your life easier
 
 And...
@@ -59,7 +59,7 @@ TIP: Don't worry! It's not bad, it's good!
 * 'None' of the above should be used
 * Instead keep up to date with newer releases
 
-TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3
+TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+
 
 == Avoid Other Old Stuff 
 :incremental!:
@@ -72,6 +72,7 @@ Be 'very' careful about
 * Old Maven plugins
 * JDK 4, 5, and 6 usage
 
+-> Keeping to use old stuff causes rotting.
 == Now Let's Get Started
 :incremental!:
 
@@ -93,7 +94,7 @@ We will look at things that ...
 
 == Misc Newer 'Small' Features
 
-* JSR330-based injection for extensions and plugin
+* JSR330-based injection for extensions and plugins
 * Transitive dependency `<exclusions>` with `*`
 * Pluggable reactor
 * Version values allow `${revision}`, `${sha1}`, `${changelist}`
@@ -219,7 +220,7 @@ Back to the shiny, new extensions...
 * E.g. running on CI server
 * Using `install`
 
--> Can corrupt maven-metadata...
+-> Can corrupt maven-metadata, mix snapshot versions,...
 
 == Reactor Improvements
 :incremental!:
@@ -265,6 +266,7 @@ https://github.com/takari/polyglot-maven-examples[Examples] available
 * Uses Maven
 * And Maven Wrapper
 * Polyglot Maven `pom.rb`
+* JRuby developers working on polyglot!
 
 ----
 <extension>
@@ -276,11 +278,33 @@ https://github.com/takari/polyglot-maven-examples[Examples] available
 
 TIP: https://github.com/jruby/jruby[Check it out.]
 
+== pom.rb
+
+----
+version = File.read( File.join( basedir, 'VERSION' ) ).strip
+project 'JRuby', 'https://github.com/jruby/jruby' do
+  model_version '4.0.0'
+  inception_year '2001'
+  id 'org.jruby:jruby-parent', version
+  inherit 'org.sonatype.oss:oss-parent:7'
+  packaging 'pom'
+  organization 'JRuby', 'http://jruby.org'
+  [ 'headius', 'enebo', 'wmeissner', 'BanzaiMan', 'mkristian' ].each do |name|
+    developer name do
+      name name
+      roles 'developer'
+    end
+  end
+...
+----
+
+
 == Polyglot Example - SnakeYAML
 
 * Uses Maven 
 * And Maven Wrapper
 * Polyglot Maven `pom.yaml`
+* SnakeYAML developers helping on polyglot!
 
 ----
 <extension>
@@ -292,13 +316,58 @@ TIP: https://github.com/jruby/jruby[Check it out.]
 
 TIP: See the https://bitbucket.org/asomov/snakeyaml/src[source.]
 
-== Polyglot Example - 
 
-TBD do we have a good groovy example? 
+== pom.yaml
 
-== Maven Shell
+----
+modelVersion: 4.0.0
+groupId: org.yaml
+artifactId: snakeyaml
+version: 1.17-SNAPSHOT
+packaging: jar 
+properties: {project.scm.id: bitbucket, project.build.sourceEncoding: UTF-8}
+name: SnakeYAML
+...
+dependencies:
+- {artifactId: junit, groupId: junit, optional: false, scope: test, type: jar, version: '4.12'}
+- {artifactId: spring, groupId: org.springframework, optional: false, scope: test,
+  type: jar, version: 2.5.6}
+----
+
+== Polyglot Example - Groovy
+
+* Uses Maven 
+* And Maven Wrapper
+* Polyglot Maven `pom.groovy`
+* GMaven developers helping on polyglot!
+
+----
+<extension>
+  <groupId>io.takari.polyglot</groupId>
+  <artifactId>polyglot-groovy</artifactId>
+  <version>0.1.12</version>
+</extension>
+----
+
+== pom.groovy
+
+TBD do we have a good groovy example using it in 'production' 
+
+----
+project {
+  modelVersion '4.0.0'    
+  groupId 'io.takari.polyglot'
+  artifactId 'groovy-project'
+  version '0.0.1-SNAPSHOT'
+...
+----
+
+== Takari Maven Shell
 :incremental!:
 
+Shell with Maven specific extensions
+
+* pom:add
 https://github.com/takari/takari-shell
 
 TBD do we add this, what do we show/say

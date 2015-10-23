@@ -1045,12 +1045,24 @@ div.admonitionblock, div.quoteblock, div.verseblock {  color: white; }
 div.cover.slide, div.cover.slide h1 { background-color: black; }
 </style>
 <style type="text/css">
+body {
+  font-family: Helvetica,Arial,Geneva,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   color: #4c4c4c;
 }
 
 div.slide div {
-  font-size: 20pt;
+  font-size: 22pt;
+}
+
+.monospaced, code, pre {
+  font-size: 16pt;
 }
 
 div.sect1 h1 {
@@ -4169,12 +4181,12 @@ New tools, plugins, &#8230;
 <ul class="">
 <li>
 <span>
-Maven is opinionated&#8230;
+The developers of Maven are  opinionated&#8230;
 </span>
 </li>
 <li>
 <span>
-And so are the developers!
+And so is Maven itself
 </span>
 </li>
 <li>
@@ -4368,7 +4380,7 @@ uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="incremental"><p>Unless you are prepared to maintain those projects yourself, use Maven 3.3.3</p></div>
+<div class="incremental"><p>Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+</p></div>
 </td>
 </tr></table>
 </div>
@@ -4410,14 +4422,11 @@ JDK 4, 5, and 6 usage
 </span>
 </li>
 </ul>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect1">
-<h1 id="_now_let_8217_s_get_started">Now Let&#8217;s Get Started</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Now Let&#8217;s Get Started";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody" style="max-width:45em">
+<div class="paragraph">
+<p>&#8594; Keeping to use old stuff causes rotting.
+== Now Let&#8217;s Get Started
+:incremental!:</p>
+</div>
 <div class="paragraph">
 <p>We will look at things that &#8230;</p>
 </div>
@@ -4494,7 +4503,7 @@ Codehaus Plugins migrated to <a href="http://www.mojohaus.org/">MojoHaus</a>
 <ul class="">
 <li>
 <span>
-JSR330-based injection for extensions and plugin
+JSR330-based injection for extensions and plugins
 </span>
 </li>
 <li>
@@ -4903,7 +4912,7 @@ Using <code>install</code>
 </li>
 </ul>
 <div class="paragraph">
-<p>&#8594; Can corrupt maven-metadata&#8230;</p>
+<p>&#8594; Can corrupt maven-metadata, mix snapshot versions,&#8230;</p>
 </div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
@@ -7488,6 +7497,11 @@ And Maven Wrapper
 Polyglot Maven <code>pom.rb</code>
 </span>
 </li>
+<li>
+<span>
+JRuby developers working on polyglot!
+</span>
+</li>
 </ul>
 <div class="listingblock">
 <div class="content">
@@ -7558,6 +7572,32 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </div><div class="slide">
 
 <div class="sect1">
+<h1 id="_pom_rb">pom.rb</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.rb";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody" style="max-width:45em">
+<div class="listingblock">
+<div class="content">
+<pre><tt>version = File.read( File.join( basedir, 'VERSION' ) ).strip
+project 'JRuby', 'https://github.com/jruby/jruby' do
+  model_version '4.0.0'
+  inception_year '2001'
+  id 'org.jruby:jruby-parent', version
+  inherit 'org.sonatype.oss:oss-parent:7'
+  packaging 'pom'
+  organization 'JRuby', 'http://jruby.org'
+  [ 'headius', 'enebo', 'wmeissner', 'BanzaiMan', 'mkristian' ].each do |name|
+    developer name do
+      name name
+      roles 'developer'
+    end
+  end
+...</tt></pre>
+</div></div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
 <h1 id="_polyglot_example_snakeyaml">Polyglot Example - SnakeYAML</h1>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - SnakeYAML";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
@@ -7575,6 +7615,11 @@ And Maven Wrapper
 <li>
 <span>
 Polyglot Maven <code>pom.yaml</code>
+</span>
+</li>
+<li>
+<span>
+SnakeYAML developers helping on polyglot!
 </span>
 </li>
 </ul>
@@ -7647,23 +7692,101 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_polyglot_example">Polyglot Example -</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example -";slidefootnotes="";/*]]>*/</script>
+<h1 id="_pom_yaml">pom.yaml</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.yaml";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph">
-<p>TBD do we have a good groovy example?</p>
-</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>modelVersion: 4.0.0
+groupId: org.yaml
+artifactId: snakeyaml
+version: 1.17-SNAPSHOT
+packaging: jar
+properties: {project.scm.id: bitbucket, project.build.sourceEncoding: UTF-8}
+name: SnakeYAML
+...
+dependencies:
+- {artifactId: junit, groupId: junit, optional: false, scope: test, type: jar, version: '4.12'}
+- {artifactId: spring, groupId: org.springframework, optional: false, scope: test,
+  type: jar, version: 2.5.6}</tt></pre>
+</div></div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_maven_shell">Maven Shell</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Shell";slidefootnotes="";/*]]>*/</script>
+<h1 id="_polyglot_example_groovy">Polyglot Example - Groovy</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - Groovy";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody" style="max-width:45em">
+<ul class="">
+<li>
+<span>
+Uses Maven
+</span>
+</li>
+<li>
+<span>
+And Maven Wrapper
+</span>
+</li>
+<li>
+<span>
+Polyglot Maven <code>pom.groovy</code>
+</span>
+</li>
+<li>
+<span>
+GMaven developers helping on polyglot!
+</span>
+</li>
+</ul>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;extension&gt;
+  &lt;groupId&gt;io.takari.polyglot&lt;/groupId&gt;
+  &lt;artifactId&gt;polyglot-groovy&lt;/artifactId&gt;
+  &lt;version&gt;0.1.12&lt;/version&gt;
+&lt;/extension&gt;</tt></pre>
+</div></div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_pom_groovy">pom.groovy</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.groovy";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
-<p><a href="https://github.com/takari/takari-shell">https://github.com/takari/takari-shell</a></p>
+<p>TBD do we have a good groovy example using it in <em>production</em></p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>project {
+  modelVersion '4.0.0'
+  groupId 'io.takari.polyglot'
+  artifactId 'groovy-project'
+  version '0.0.1-SNAPSHOT'
+...</tt></pre>
+</div></div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_takari_maven_shell">Takari Maven Shell</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Takari Maven Shell";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph">
+<p>Shell with Maven specific extensions</p>
+</div>
+<ul class="">
+<li>
+<span>
+pom:add
+<a href="https://github.com/takari/takari-shell">https://github.com/takari/takari-shell</a>
+</span>
+</li>
+</ul>
 <div class="paragraph">
 <p>TBD do we add this, what do we show/say</p>
 </div>
@@ -8182,7 +8305,7 @@ TBD link to maven site
 </ul>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Last updated 2015-10-15 22:33:52 PDT
+Last updated 2015-10-22 22:18:23 PDT
 </div>
 </div>
 </div></div>
