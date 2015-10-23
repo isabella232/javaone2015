@@ -252,9 +252,9 @@ TIP: Check out the http://takari.io/book/30-team-maven.html#takari-smart-builder
 :incremental!:
 
 * Support for POM written in 
-** Groovy
-** YAML
 ** Ruby
+** YAML
+** Groovy
 ** Others
 * Produces POM for deployment and tool support
 * https://github.com/takari/polyglot-maven[Project] and 
@@ -420,6 +420,9 @@ Example simple usage:
 
 ----
 <packaging>takari-jar</packaging>
+
+...
+
 <build>
   <plugins>
     <plugin>
@@ -436,7 +439,7 @@ Example simple usage:
 
 * Maven plugin testing support
 * Test project generation from dot files
-* proto plugin - archetype replacement
+* Proto plugin - archetype replacement
 
 
 == Plugin Testing
@@ -448,19 +451,19 @@ Maven plugin testing framework including IDE support:
 * Integration testing
 
 ----
- <dependency>
-      <groupId>io.takari.maven.plugins</groupId>
-      <artifactId>takari-plugin-testing</artifactId>
-      <version>${takari.test.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.takari.maven.plugins</groupId>
-      <artifactId>takari-plugin-integration-testing</artifactId>
-      <version>${takari.test.version}</version>
-      <type>pom</type>
-      <scope>test</scope>
-    </dependency>
+<dependency>
+  <groupId>io.takari.maven.plugins</groupId>
+  <artifactId>takari-plugin-testing</artifactId>
+  <version>${takari.test.version}</version>
+  <scope>test</scope>
+</dependency>
+<dependency>
+  <groupId>io.takari.maven.plugins</groupId>
+  <artifactId>takari-plugin-integration-testing</artifactId>
+  <version>${takari.test.version}</version>
+  <type>pom</type>
+  <scope>test</scope>
+</dependency>
 ----
 
 TIP: Check the http://takari.io/book/70-testing.html[docs]
@@ -468,9 +471,9 @@ TIP: Check the http://takari.io/book/70-testing.html[docs]
 == Integration Testing Examples
 :incremental!:
 
-* Multiple invocations of Maven builds from Maven build ;-)
+* Multiple invocations 'of' Maven builds 'from' Maven build
 * Android Maven Plugin and NDK Plugin
-
+* Replacement of invoker usage
 ----
 @RunWith(MavenJUnitTestRunner.class)
 @MavenVersions({"3.0.5","3.3.3"})
@@ -490,25 +493,27 @@ maybe .. depending on status, at least update what is there and what is coming
 == Maven Development Tools
 :incremental!:
 
-
 * M2e
 * MavenDevTools
+* TakariLifecycle support
 
-TBD
+Benefits:
 
-Awesome for Maven dev and plugin dev
-Have M2e run Maven from within workspace
+* Workspace resolution for
+** Dependencies
+** Plugins
+** Extensions
+** Maven itself
+* Maven Junit Test UI
+* Maven build view
 
-
+TIP: Demo time!
 
 == Eclipse and M2e
 :incremental!:
 
-TBD
-
-* including polyglot extensions from Fred
-* Maven dev tools
-* Maybe some web app
+* Further improvements for M2e and WTP integration
+* Polyglot  Maven extensions
 
 == IntelliJ
 :incremental!:
