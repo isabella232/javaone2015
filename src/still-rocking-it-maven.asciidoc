@@ -362,19 +362,24 @@ project {
 ...
 ----
 
+////
 == Takari Maven Shell
 :incremental!:
 
 Shell with Maven specific extensions
 
-* pom:add
 https://github.com/takari/takari-shell
 
 TBD do we add this, what do we show/say
+////
 
 == Incremental Build
 
-TBD - talk about library
+Specific library to support:
+
+
+
+TIP: Source on  https://github.com/takari/io.takari.incrementalbuild[GitHub]
 
 == Incremental Example
 :incremental!:
@@ -384,14 +389,34 @@ TBD Example of to make incremental plugin (antlr build)
 == Takari Lifecycle
 :incremental!:
 
-TBD
+New Maven Plugin
 
-http://takari.io/book/40-lifecycle.html#the-takari-lifecycle
+* Uses incremental support library for sources and resources
+* One plugin for whole lifecycle
+* Replaces default lifecycle plugins (resources, compiler, jar, install, deploy) 
+* Uses `extension`
+* `takari-jar` packaging
+* Eclipse Java compiler for improved incremental compilation
 
-* extensions
-* takari-jar packaging
-* one plugin for whole lifecycle
-* incremental build library
+TIP: http://takari.io/book/40-lifecycle.html#the-takari-lifecycle[Documentatio] and
+https://github.com/takari/takari-lifecycle[source] are open source.
+
+== Takari Lifecycle
+
+----
+<packaging>takari-jar</packaging>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>io.takari.maven.plugins</groupId>
+      <artifactId>takari-lifecycle-plugin</artifactId>
+      <extensions>true</extensions>
+    </plugin>
+  </plugins>
+</build>
+----
+
+TIP: Also works for POM and 
 
 == Maven Testing Tools and Beyond
 :incremental!:
