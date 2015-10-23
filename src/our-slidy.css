@@ -1,9 +1,21 @@
+body {
+  font-family: Helvetica,Arial,Geneva,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   color: #4c4c4c;
 }
 
 div.slide div {
-  font-size: 20pt;
+  font-size: 22pt;
+}
+
+.monospaced, code, pre {
+  font-size: 16pt;
 }
 
 div.sect1 h1 {
