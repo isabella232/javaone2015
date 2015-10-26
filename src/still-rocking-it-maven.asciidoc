@@ -226,7 +226,7 @@ Back to the shiny, new extensions...
 == Reactor Improvements
 :incremental!:
 
-image::images/smart-builder-scheduler.png[scale=80]
+image::images/smart-builder-scheduler.png[align="center"]
 
 
 == Reactor Improvements
