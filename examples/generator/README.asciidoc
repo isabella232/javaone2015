@@ -1,0 +1,34 @@
+== Generating Test Projects
+
+Demonstrate how to generate a project structure with the Graphviz DOT file as a starting point.
+
+----
+#!/bin/sh
+
+dot -T pdf | open -a /Applications/Preview.app -f
+----
+
+----
+digraph project {
+  groupId="io.takari.generations";
+  artifactId="generations";
+  version="1.0.0.generation";
+  versionRange="[1.0.0,2.0.0)";
+  projectLifecycle="takari-jar";
+  takariLifecycleVersion="1.11.11";
+  project01->project02;
+  project01->project03;
+  project02->project03;
+  project02->project04;
+  project03->project05;
+  project03->project06;
+  project04->project06;
+  project05->project07;
+  project07->project08->project09;
+  project07->"junit:junit:4.11"
+}
+----
+
+----
+mvn io.takari:maven:generate
+----
