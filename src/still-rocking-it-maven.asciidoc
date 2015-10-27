@@ -105,6 +105,7 @@ We will look at things that ...
 == Maven Wrapper
 :incremental!:
 
+* Shameless copy of the Gradle Wrapper
 * Unix and Windows scripts 
 * Within project structure -> version controlled
 * Automatic download and install of Maven
@@ -493,7 +494,7 @@ maybe .. depending on status, at least update what is there and what is coming
 == Maven Development Tools
 :incremental!:
 
-* M2e
+* M2Eclipse
 * MavenDevTools
 * TakariLifecycle support
 
@@ -509,30 +510,23 @@ Benefits:
 
 TIP: Demo time!
 
-== Eclipse and M2e
+== Demos
+
+* Project Generator
+* Maven Timeline: https://github.com/takari/maven-timeline
+* Maven Dev Tools
+* M2Eclise Polyglot Prototype
+
+== Eclipse and M2Eclipse
 :incremental!:
 
 * Further improvements for M2e and WTP integration
-* Polyglot  Maven extensions
+* Polyglot Maven extensions
+** https://github.com/jbosstools/m2e-polyglot-poc
+** https://www.youtube.com/watch?v=iQcdAMLhZFA
 
-== IntelliJ
+== Maven Central 
 :incremental!:
-
-TBD
-
-IntelliJ - change request, push Jetbrains 
-
-== Netbeans
-:incremental!:
-
-TBD
-?? tbd - download and check it out
-
-== Central Repository 
-:incremental!:
-
-[quote]
-aka. Maven Central
 
 * Largest Maven2 format repository
 * High performance, global CDN 
@@ -561,7 +555,7 @@ Input funnel for Central Repository
 * 10 - 30 project verified and onbarded per day
 * approx. 30.000 new releases each month (GAV)
 
-== Central Repository - Next
+== Maven Central - Next
 
 Full replication to Google Cloud Storage:
 
@@ -618,4 +612,3 @@ TIP: Slides and examples at http://takari.github.io/javaone2015/[http://takari.g
 * http://maven.apache.org/[Apache Maven]
 * http://www.mojohaus.org/[MojoHaus]
 * http://takari.io/book/index.html[Takari including documentation]
-
