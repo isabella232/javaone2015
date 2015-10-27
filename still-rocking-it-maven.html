@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="copyright" content="Copyright 2015-present, Takari and simpligility, All Rights Reserved." />
-<meta name="generator" content="AsciiDoc 8.6.9 / slidy2 backend 1.0.4" />
+<meta name="generator" content="AsciiDoc 8.6.9 / slidy2 backend 1.0.3" />
 <title>Still Rocking It: A Dozen or More Demos and Great News for Apache Maven Users</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -4037,18 +4037,6 @@ if (!w3c_slidy.incremental_display) {value = "visible";}
 
     if (!w3c_slidy.lang)
       w3c_slidy.lang = "en";
-  },
-  // JMI
-  slidefootnotes: function () {
-    if (slidefootnotes) {
-    var spans = document.getElementsByTagName("span");
-    for (var i=0; i<spans.length; i++) {
-      if (spans[i].className == "footnote") {
-        document.write("<p>"+spans[i].innerHTML+"</p>");
-        spans[i].className = "footnotedone";
-      }
-    }
-    }
   }
 };
 
@@ -4078,12 +4066,12 @@ setTimeout(w3c_slidy.hide_slides, 50);
 <span id="revdate">October 2015</span>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_apache_maven_still_rocking_it">Apache Maven - Still Rocking It</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Apache Maven - Still Rocking It";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Apache Maven - Still Rocking It";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="quoteblock">
 <div class="content">A Dozen Demos and Great News for Apache Maven Users</div>
@@ -4166,12 +4154,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_what_are_you_going_to_learn">What Are You Going to Learn?</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="What Are You Going to Learn?";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="What Are You Going to Learn?";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4194,12 +4182,12 @@ New tools, plugins, &#8230;
 <p>&#8594; Lots of stuff happening in the Apache Maven ecosystem!</p>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_before_we_get_started">Before We Get Started</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Before We Get Started";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Before We Get Started";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4300,12 +4288,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_do_not_use_old_maven_versions">Do NOT Use Old Maven Versions</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Do NOT Use Old Maven Versions";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Do NOT Use Old Maven Versions";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class=" incremental">
 <li>
@@ -4349,7 +4337,7 @@ Instead keep up to date with newer releases
 </span>
 </li>
 </ul>
-<div class="admonitionblock incremental">
+<div class="admonitionblock">
 <table><tr>
 <td class="icon">
 <img alt="Tip" src="data:image/png;base64,
@@ -4402,16 +4390,18 @@ Pvx+P8FgkGAw+OWfD7gj94RG13U0TSOdTpNOp8lMbmQ0TcvbArrrK1mW8Xg8eL3e7BLB5/N9dSc0
 uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
-<td class="content">Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+</td>
+<td class="content">
+<div class="incremental"><p>Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+</p></div>
+</td>
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_avoid_other_old_stuff">Avoid Other Old Stuff</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Avoid Other Old Stuff";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Avoid Other Old Stuff";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Be <em>very</em> careful about</p>
@@ -4447,12 +4437,12 @@ JDK 4, 5, and 6 usage
 <p>&#8594; Keeping to use old stuff causes rotting.</p>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_now_let_8217_s_get_started">Now Let&#8217;s Get Started</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Now Let&#8217;s Get Started";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Now Let&#8217;s Get Started";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>We will look at things that &#8230;</p>
@@ -4490,12 +4480,12 @@ And much more
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_where_are_we_at">Where Are We At?</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Where Are We At?";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Where Are We At?";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4520,12 +4510,12 @@ Codehaus Plugins migrated to <a href="http://www.mojohaus.org/">MojoHaus</a>
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_misc_newer_em_small_em_features">Misc Newer <em>Small</em> Features</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Misc Newer <em>Small</em> Features";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Misc Newer <em>Small</em> Features";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4560,12 +4550,12 @@ Central Repository access defaults to HTTPS
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_maven_wrapper">Maven Wrapper</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Wrapper";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Wrapper";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4610,12 +4600,12 @@ Specifies Maven version
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_maven_wrapper_2">Maven Wrapper</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Wrapper";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Wrapper";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="listingblock">
 <div class="content">
@@ -4630,12 +4620,12 @@ Specifies Maven version
 mvnw.bat clean install</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_project_local_configuration">Project Local Configuration</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Project Local Configuration";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Project Local Configuration";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p><code>.mvn</code> directory</p>
@@ -4688,12 +4678,12 @@ Core extension loading
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_mvn_jvm_configuration">.mvn JVM Configuration</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle=".mvn JVM Configuration";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle=".mvn JVM Configuration";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4712,12 +4702,12 @@ No more global, polluted <code>MAVEN_OPTS</code>
 <pre><tt>-Xmx8192m</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_mvn_maven_configuration">.mvn Maven Configuration</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle=".mvn Maven Configuration";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle=".mvn Maven Configuration";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4738,12 +4728,12 @@ Maven invocation parameters
 --U</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_core_extension_loading">Core Extension Loading</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Core Extension Loading";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Core Extension Loading";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Allow different behavior of Maven itself</p>
@@ -4836,12 +4826,12 @@ vr6+wTfK/4tEfzeeMmUKkydPzhg8jJAAREgEg0H6+vrQNC2pFL8ZUVWVrKws8vPzycnJQVXVjH/s
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_core_extensions_loading">Core Extensions Loading</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Core Extensions Loading";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Core Extensions Loading";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p><code>.mvn/extensions.xml</code>:</p>
@@ -4863,12 +4853,12 @@ vr6+wTfK/4tEfzeeMmUKkydPzhg8jJAAREgEg0H6+vrQNC2pFL8ZUVWVrKws8vPzycnJQVXVjH/s
 &lt;/extensions&gt;</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_control_your_build">Control Your Build</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Control Your Build";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Control Your Build";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Beyond wrapper and <code>.mvn</code></p>
@@ -4919,12 +4909,12 @@ or write your own rules
 <div class="attribution">
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_concurrent_local_repository_access">Concurrent Local Repository Access</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Concurrent Local Repository Access";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Concurrent Local Repository Access";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4947,12 +4937,12 @@ Using <code>install</code>
 <p>&#8594; Can corrupt maven-metadata, mix snapshot versions,&#8230;</p>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_reactor_improvements">Reactor Improvements</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Reactor Improvements";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Reactor Improvements";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="imageblock" style="text-align:center;">
 <div class="content">
@@ -8197,12 +8187,12 @@ GAEjYASMgBEwAkbACBiBAxEw6XEgmE7KCBgBI2AEjIARMAJGwAgYASNgBIyAETgPAv8H5Aj/pwWA
 </div>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_reactor_improvements_2">Reactor Improvements</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Reactor Improvements";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Reactor Improvements";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Use extension or install in lib</p>
@@ -8286,12 +8276,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_polyglot_maven">Polyglot Maven</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Maven";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Maven";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8344,12 +8334,12 @@ Take advantage of language/markup
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_polyglot_example_jruby_build">Polyglot Example - JRuby Build</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - JRuby Build";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - JRuby Build";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8438,12 +8428,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_pom_rb">pom.rb</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.rb";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.rb";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="listingblock">
 <div class="content">
@@ -8464,12 +8454,12 @@ project 'JRuby', 'https://github.com/jruby/jruby' do
 ...</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_polyglot_example_snakeyaml">Polyglot Example - SnakeYAML</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - SnakeYAML";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - SnakeYAML";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8558,12 +8548,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_pom_yaml">pom.yaml</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.yaml";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.yaml";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="listingblock">
 <div class="content">
@@ -8581,12 +8571,12 @@ dependencies:
   type: jar, version: 2.5.6}</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_polyglot_example_groovy">Polyglot Example - Groovy</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - Groovy";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Polyglot Example - Groovy";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8619,12 +8609,12 @@ GMaven developers helping on polyglot!
 &lt;/extension&gt;</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_pom_groovy">pom.groovy</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.groovy";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="pom.groovy";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="listingblock">
 <div class="content">
@@ -8641,12 +8631,12 @@ GMaven developers helping on polyglot!
 }</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_incremental_build">Incremental Build</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Incremental Build";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Incremental Build";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8725,12 +8715,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_takari_lifecycle">Takari Lifecycle</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Takari Lifecycle";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Takari Lifecycle";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>New Maven Plugin</p>
@@ -8825,12 +8815,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_takari_lifecycle_2">Takari Lifecycle</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Takari Lifecycle";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Takari Lifecycle";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Example simple usage:</p>
@@ -8852,12 +8842,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 &lt;/build&gt;</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_maven_testing_tools_and_beyond">Maven Testing Tools and Beyond</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Testing Tools and Beyond";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Testing Tools and Beyond";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -8877,12 +8867,12 @@ Proto plugin - archetype replacement
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_plugin_testing">Plugin Testing</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Plugin Testing";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Plugin Testing";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Maven plugin testing framework including IDE support:</p>
@@ -8972,12 +8962,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_integration_testing_examples">Integration Testing Examples</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Integration Testing Examples";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Integration Testing Examples";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -9003,12 +8993,12 @@ Replacement of invoker usage
 public class HelloFlashLightSampleIT {</tt></pre>
 </div></div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_maven_development_tools">Maven Development Tools</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Development Tools";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Development Tools";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -9126,12 +9116,42 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_demos">Demos</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Demos";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody" style="max-width:45em">
+<ul class="">
+<li>
+<span>
+Project Generator
+</span>
+</li>
+<li>
+<span>
+Maven Timeline: <a href="https://github.com/takari/maven-timeline">https://github.com/takari/maven-timeline</a>
+</span>
+</li>
+<li>
+<span>
+Maven Dev Tools
+</span>
+</li>
+<li>
+<span>
+M2Eclise Polyglot Prototype
+</span>
+</li>
+</ul>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_eclipse_and_m2eclipse">Eclipse and M2Eclipse</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Eclipse and M2Eclipse";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Eclipse and M2Eclipse";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -9158,17 +9178,13 @@ Polyglot Maven extensions
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_central_repository">Central Repository</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Central Repository";slidefootnotes=false;/*]]>*/</script>
+<h1 id="_maven_central">Maven Central</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Central";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
-<div class="quoteblock">
-<div class="content">aka. Maven Central</div>
-<div class="attribution">
-</div></div>
 <ul class="">
 <li>
 <span>
@@ -9202,18 +9218,18 @@ HTTPS
 </li>
 </ul>
 <div class="paragraph">
-<p>&#8594; Sponsored by Sonatype</p>
+<p>&#8594; Sponsored by <a href="http://www.sonatype.com/">Sonatype</a></p>
 </div>
 <div class="paragraph">
 <p>And the components come from&#8230;</p>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_ossrh_and_forges">OSSRH and Forges</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="OSSRH and Forges";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="OSSRH and Forges";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Input funnel for Central Repository</p>
@@ -9221,7 +9237,7 @@ HTTPS
 <ul class="">
 <li>
 <span>
-OSSRH - large deployment of Nexus Repository Manager
+OSSRH - large deployment of <a href="http://www.sonatype.com/nexus/product-overview">Nexus Repository Manager</a>
 </span>
 </li>
 <li>
@@ -9235,13 +9251,69 @@ Community support - on-boarding and documentation
 </span>
 </li>
 </ul>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Tip" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">Feedback about <a href="http://central.sonatype.org/">docs</a> is welcome!</td>
+</tr></table>
+</div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_more_ossrh_and_central_stats">More OSSRH and Central Stats</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="More OSSRH and Central Stats";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="More OSSRH and Central Stats";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -9266,12 +9338,12 @@ approx. 30.000 new releases each month (GAV)
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_central_repository_next">Central Repository - Next</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Central Repository - Next";slidefootnotes=false;/*]]>*/</script>
+<h1 id="_maven_central_next">Maven Central - Next</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Maven Central - Next";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Full replication to Google Cloud Storage:</p>
@@ -9362,12 +9434,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_other_cool_stuff">Other Cool Stuff</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Other Cool Stuff";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Other Cool Stuff";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Lots of things happening:</p>
@@ -9410,12 +9482,12 @@ flatten-maven-plugin
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_summary">Summary</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Summary";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Summary";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -9491,12 +9563,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_next">Next?</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Next?";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Next?";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Join us for a <a href="http://takari.io/events.html">Maven Hangout On Air</a></p>
@@ -9524,12 +9596,12 @@ And developer questions
 </li>
 </ul>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_the_end">The End</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="The End";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="The End";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph">
 <p>Questions, Remarks &amp;  Discussion</p>
@@ -9591,12 +9663,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
 <h1 id="_resources">Resources</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Resources";slidefootnotes=false;/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Resources";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class=" incremental">
 <li>
@@ -9615,18 +9687,13 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </span>
 </li>
 </ul>
-<div class="paragraph">
-<div class="incremental">
-<p><a href="https://github.com/takari/maven-timeline">https://github.com/takari/maven-timeline</a></p>
-</div>
-</div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Last updated 2015-10-27 11:54:37 PDT
+Last updated 2015-10-27 14:57:12 PDT
 </div>
 </div>
 </div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes){document.write("<hr/>"); w3c_slidy.slidefootnotes();}/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div>
 <script type="text/javascript">
 /*<![CDATA[*/
