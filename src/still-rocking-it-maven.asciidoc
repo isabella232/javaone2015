@@ -535,7 +535,7 @@ TIP: Demo time!
 * Default in Apache Maven and others
 * HTTPS
 
--> Sponsored by Sonatype
+-> Sponsored by http://www.sonatype.com/[Sonatype]
 
 And the components come from...
 
@@ -544,9 +544,11 @@ And the components come from...
 
 Input funnel for Central Repository
 
-* OSSRH - large deployment of Nexus Repository Manager
+* OSSRH - large deployment of http://www.sonatype.com/nexus/product-overview[Nexus Repository Manager]
 * Apache, JBoss, ... - secondary Nexus instances
 * Community support - on-boarding and documentation
+
+TIP: Feedback about http://central.sonatype.org/[docs] is welcome!
 
 == More OSSRH and Central Stats
 
