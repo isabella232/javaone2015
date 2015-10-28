@@ -4335,7 +4335,7 @@ uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="incremental"><p>Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+</p></div>
+<div class="incremental"><p>Unless you are prepared to maintain those projects yourself, use Maven 3.3.3 or 3.3.7</p></div>
 </td>
 </tr></table>
 </div>
@@ -4475,11 +4475,6 @@ Transitive dependency <code>&lt;exclusions&gt;</code> with <code>*</code>
 <li>
 <span>
 Pluggable reactor
-</span>
-</li>
-<li>
-<span>
-Version values allow <code>${revision}</code>, <code>${sha1}</code>, <code>${changelist}</code>
 </span>
 </li>
 <li>
@@ -4667,9 +4662,9 @@ Maven invocation parameters
 </ul>
 <div class="listingblock">
 <div class="content">
-<pre><tt>--T 8
+<pre><tt>-T 8
 --builder smart
---U</tt></pre>
+-U</tt></pre>
 </div></div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
@@ -4857,8 +4852,8 @@ or write your own rules
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_concurrent_local_repository_access">Concurrent Local Repository Access</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Concurrent Local Repository Access";slidefootnotes="";/*]]>*/</script>
+<h1 id="_concurrent_local_repo">Concurrent Local Repo</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="Concurrent Local Repo";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
@@ -4933,7 +4928,7 @@ Pvx+P8FgkGAw+OWfD7gj94RG13U0TSOdTpNOp8lMbmQ0TcvbArrrK1mW8Xg8eL3e7BLB5/N9dSc0
 uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
-<td class="content">Takari extension avoid problems</td>
+<td class="content">Takari extension to avoid problems</td>
 </tr></table>
 </div>
 </div></div>
@@ -9249,16 +9244,6 @@ High performance, global CDN
 </li>
 <li>
 <span>
-&gt; 17 billion download in 2014
-</span>
-</li>
-<li>
-<span>
-&gt; 1 million GAV coordinates
-</span>
-</li>
-<li>
-<span>
 Default in Apache Maven and others
 </span>
 </li>
@@ -9293,7 +9278,7 @@ OSSRH - large deployment of <a href="http://www.sonatype.com/nexus/product-overv
 </li>
 <li>
 <span>
-Apache, JBoss, &#8230; - secondary Nexus instances
+Apache, JBoss, java.net &#8230; - secondary Nexus instances
 </span>
 </li>
 <li>
@@ -9369,12 +9354,22 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 <ul class="">
 <li>
 <span>
-currently about 100k projects total
+&gt; 17 billion requests in 2014
 </span>
 </li>
 <li>
 <span>
-approx. 3000 new projects each month (GA)
+&gt; 1 million GAV coordinates
+</span>
+</li>
+<li>
+<span>
+Currently about 100k projects total
+</span>
+</li>
+<li>
+<span>
+Approx. 3000 new projects each month (GA)
 </span>
 </li>
 <li>
@@ -9384,10 +9379,22 @@ approx. 3000 new projects each month (GA)
 </li>
 <li>
 <span>
-approx. 30.000 new releases each month (GAV)
+Approx. 30.000 new releases each month (GAV)
 </span>
 </li>
 </ul>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_one_last_thing">One Last Thing</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="One Last Thing";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody" style="max-width:45em">
+<div class="quoteblock">
+<div class="content">Check out what Jason has been working &#8230;</div>
+<div class="attribution">
+</div></div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -9418,6 +9425,11 @@ Experiments with new features like
 <li>
 <span>
 Search service
+</span>
+</li>
+<li>
+<span>
+Binary compatibility index
 </span>
 </li>
 <li>
@@ -9505,7 +9517,7 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
     &lt;mirror&gt;
       &lt;id&gt;google-maven-central&lt;/id&gt;
       &lt;name&gt;Google Maven Central&lt;/name&gt;
-      &lt;url&gt;http://maven-central.storage.googleapis.com&lt;/url&gt;
+      &lt;url&gt;https://maven-central.storage.googleapis.com&lt;/url&gt;
       &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
     &lt;/mirror&gt;
   &lt;/mirrors&gt;
@@ -9722,7 +9734,7 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </ul>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Last updated 2015-10-27 22:55:23 PDT
+Last updated 2015-10-28 09:54:06 PDT
 </div>
 </div>
 </div></div>

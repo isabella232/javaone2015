@@ -57,7 +57,7 @@ And...
 * 'None' of the above should be used
 * Instead keep up to date with newer releases
 
-TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3+
+TIP: Unless you are prepared to maintain those projects yourself, use Maven 3.3.3 or 3.3.7 
 
 == Avoid Other Old Stuff 
 :incremental!:
@@ -95,8 +95,7 @@ We will look at things that ...
 
 * JSR330-based injection for extensions and plugins
 * Transitive dependency `<exclusions>` with `*`
-* Pluggable reactor
-* Version values allow `${revision}`, `${sha1}`, `${changelist}`
+* Pluggable reactor 
 * Version ranges in `<parent>`
 * Central Repository access defaults to HTTPS
 
@@ -160,9 +159,9 @@ Used for
 * Maven invocation parameters
 
 ----
---T 8
+-T 8
 --builder smart
---U
+-U
 ----
 
 == Core Extension Loading
@@ -214,7 +213,7 @@ Beyond wrapper and `.mvn`
 [quote]
 Back to the shiny, new extensions...
 
-== Concurrent Local Repository Access
+== Concurrent Local Repo
 
 * Multiple builds running
 * E.g. on CI server
@@ -222,7 +221,7 @@ Back to the shiny, new extensions...
 
 -> Can corrupt maven-metadata, mix snapshot versions,...
 
-TIP: Takari extension avoid problems
+TIP: Takari extension to avoid problems
 
 == Reactor Improvements
 :incremental!:
@@ -545,8 +544,6 @@ Lots of things happening:
 
 * Largest Maven2 format repository
 * High performance, global CDN 
-* > 17 billion download in 2014
-* > 1 million GAV coordinates
 * Default in Apache Maven and others
 * HTTPS
 
@@ -560,17 +557,19 @@ And the components come from...
 Input funnel for Central Repository
 
 * OSSRH - large deployment of http://www.sonatype.com/nexus/product-overview[Nexus Repository Manager]
-* Apache, JBoss, ... - secondary Nexus instances
+* Apache, JBoss, java.net ... - secondary Nexus instances
 * Community support - on-boarding and documentation
 
 TIP: Feedback about http://central.sonatype.org/[docs] is welcome!
 
 == More OSSRH and Central Stats
 
-* currently about 100k projects total
-* approx. 3000 new projects each month (GA)
+* > 17 billion requests in 2014
+* > 1 million GAV coordinates
+* Currently about 100k projects total
+* Approx. 3000 new projects each month (GA)
 * 10 - 30 project verified and onbarded per day
-* approx. 30.000 new releases each month (GAV)
+* Approx. 30.000 new releases each month (GAV)
 
 == One Last Thing
 
@@ -585,6 +584,7 @@ Full replication to Google Cloud Storage:
 * Experiments with new features like
 ** https://http2.github.io/[HTTP/2] (evolved SPDY)
 ** Search service
+** Binary compatibility index 
 ** more.. 
 
 TIP: Contact us if you want to play with it and...
@@ -601,7 +601,7 @@ Update `$HOME/.m2/settings.xml` to:
     <mirror>
       <id>google-maven-central</id>
       <name>Google Maven Central</name>
-      <url>http://maven-central.storage.googleapis.com</url>
+      <url>https://maven-central.storage.googleapis.com</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
