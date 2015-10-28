@@ -42,10 +42,8 @@ And...
 
 * Maven is open source
 * Work happens on latest code
-* Old releases receive no attention or support
+* Old releases receive little attention or support
 * There is no one company behind Maven - its a community!
-
-TIP: Don't worry! It's not bad, it's good!
 
 == Do NOT Use Old Maven Versions
 :incremental:
@@ -68,11 +66,11 @@ Be 'very' careful about
 
 * IDEs using old Maven versions
 * Using different version on command line / CI server
-* Old IDE plugins
+* Old IDE plugins/integrations
 * Old Maven plugins
 * JDK 4, 5, and 6 usage
 
--> Keeping to use old stuff causes rotting.
+-> Continuing to use old stuff causes rotting.
 
 == Now Let's Get Started
 :incremental!:
@@ -88,7 +86,7 @@ We will look at things that ...
 
 == Where Are We At?
 
-* Apache Maven 3.3.3/3.3.6
+* Apache Maven 3.3.3/3.3.7
 * Apache Maven Plugins - require 3+
 * Java 1.7+ for build execution
 * Codehaus Plugins migrated to http://www.mojohaus.org/[MojoHaus]
@@ -121,11 +119,11 @@ We will look at things that ...
 mvn -N io.takari:maven:wrapper
 ----
 
-And then just use similar commands to 
+And then, just use similar commands to 
 
 ----
 ./mvnw clean install
-mvnw.bat clean install
+mvnw.cmd clean install
 ----
 
 == Project Local Configuration
@@ -219,13 +217,17 @@ Back to the shiny, new extensions...
 == Concurrent Local Repository Access
 
 * Multiple builds running
-* E.g. running on CI server
+* E.g. on CI server
 * Using `install`
 
 -> Can corrupt maven-metadata, mix snapshot versions,...
 
+TIP: Takari extension avoid problems
+
 == Reactor Improvements
 :incremental!:
+
+Considerably reduced multi-module build times.
 
 image::images/smart-builder-scheduler.png[align="center"]
 
@@ -525,6 +527,19 @@ TIP: Demo time!
 ** https://github.com/jbosstools/m2e-polyglot-poc
 ** https://www.youtube.com/watch?v=iQcdAMLhZFA
 
+== Other Cool Stuff
+:incremental!:
+
+Lots of things happening: 
+
+* Evolving Apache and Mojohaus plugins
+* Docker Maven Plugins from https://github.com/spotify/docker-maven-plugin[spotify] and others
+* http://simpligility.github.io/android-maven-plugin/[Android Maven Plugin] and beyond
+* https://github.com/maven-nar[Maven NAR] 
+* Various JS and web development related plugins
+* https://github.com/simpligility/maven-repository-tools[Maven Repository Tools]
+* flatten-maven-plugin
+
 == Maven Central 
 :incremental!:
 
@@ -557,6 +572,7 @@ TIP: Feedback about http://central.sonatype.org/[docs] is welcome!
 * 10 - 30 project verified and onbarded per day
 * approx. 30.000 new releases each month (GAV)
 
+
 == Maven Central - Next
 
 Full replication to Google Cloud Storage:
@@ -567,20 +583,28 @@ Full replication to Google Cloud Storage:
 ** Search service
 ** more.. 
 
-TIP: Contact us if you want to play with it.
- 
-== Other Cool Stuff
-:incremental!:
+TIP: Contact us if you want to play with it and...
 
-Lots of things happening: 
+== Google and Maven Central
 
-* Evolving Apache and Mojohaus plugins
-* Docker Maven Plugins from https://github.com/spotify/docker-maven-plugin[spotify] and others
-* http://simpligility.github.io/android-maven-plugin/[Android Maven Plugin] and beyond
-* https://github.com/maven-nar[Maven NAR] 
-* Various JS and web development related plugins
-* https://github.com/simpligility/maven-repository-tools[Maven Repository Tools]
-* flatten-maven-plugin
+It is live NOW! 
+
+Update `$HOME/.m2/settings.xml` to:
+
+----
+<settings>
+  <mirrors>
+    <mirror>
+      <id>google-maven-central</id>
+      <name>Google Maven Central</name>
+      <url>http://maven-central.storage.googleapis.com</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
+----
+
+Or add it as proxy repository in your repository manager.
 
 == Summary
 :incremental!:
