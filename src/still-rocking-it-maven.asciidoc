@@ -572,6 +572,10 @@ TIP: Feedback about http://central.sonatype.org/[docs] is welcome!
 * 10 - 30 project verified and onbarded per day
 * approx. 30.000 new releases each month (GAV)
 
+== One Last Thing
+
+[quote]
+Check out what Jason has been working ...
 
 == Maven Central - Next
 
