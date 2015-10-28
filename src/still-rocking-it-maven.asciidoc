@@ -574,7 +574,7 @@ TIP: Feedback about http://central.sonatype.org/[docs] is welcome!
 == One Last Thing
 
 [quote]
-Check out what Jason has been working ...
+Check out what Jason and Ludo at Google have been working on ...
 
 == Maven Central - Next
 
@@ -585,13 +585,14 @@ Full replication to Google Cloud Storage:
 ** https://http2.github.io/[HTTP/2] (evolved SPDY)
 ** Search service
 ** Binary compatibility index 
+** Hosted on same Google as Compute Engine, faster!
 ** more.. 
 
-TIP: Contact us if you want to play with it and...
+TIP: Contact us, if you want to play with it.
 
 == Google and Maven Central
 
-It is live NOW! 
+It is live *NOW*! 
 
 Update `$HOME/.m2/settings.xml` to:
 
